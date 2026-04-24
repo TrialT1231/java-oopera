@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Actor extends Person {
     private double height;
 
-    public Actor(String name, String surname, String gender, double height) {
+    public Actor(String name, String surname, Gender gender, double height) {
         super(name, surname, gender);
         this.height = height;
     }
@@ -11,9 +11,10 @@ public class Actor extends Person {
     @Override
     public String toString() {
         return "Actor{" +
-                "Фамилия='" + surname + '\'' +
-                ", Имя='" + name + '\'' +
-                ", Рост='" + height + '\'' +
+                "height=" + height +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", gender=" + gender +
                 '}';
     }
 
@@ -28,4 +29,5 @@ public class Actor extends Person {
     public int hashCode() {
         return Objects.hash(name, surname, gender,  height);
     }
+
 }

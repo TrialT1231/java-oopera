@@ -1,6 +1,6 @@
 public class Director extends Person {
     private int numberOfShows;
-    public Director(String name, String surname, String gender, int numberOfShows) {
+    public Director(String name, String surname, Gender gender, int numberOfShows) {
         super(name, surname, gender);
         this.numberOfShows = numberOfShows;
     }
@@ -8,8 +8,10 @@ public class Director extends Person {
     @Override
     public String toString() {
         return "Director{" +
-                "Фамилия='" + surname + '\'' +
-                ", Имя='" + name + '\'' +
+                "numberOfShows=" + numberOfShows +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", gender=" + gender +
                 '}';
     }
 }
