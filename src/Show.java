@@ -4,7 +4,8 @@ public class Show {
     protected String title;
     protected int duration;
     protected Director director;
-    public ArrayList<Actor> listOfActors;
+    protected ArrayList<Actor> listOfActors;
+
     public Show() {
         this.listOfActors = new ArrayList<>();
     }
@@ -34,10 +35,11 @@ public class Show {
 
     public void changeActor(Actor actor1, String actor2) {
         boolean f = false;
-        listOfActors.remove(actor1);
+
         Actor actor;
         for (int i = 0; i < Theatre.theatreActors.size(); i++) {
-            if(Theatre.theatreActors.get(i).getSurname().equals(actor2)) {
+            if (Theatre.theatreActors.get(i).getSurname().equals(actor2) && listOfActors.contains(actor1)) {
+                listOfActors.remove(actor1);
                 actor = Theatre.theatreActors.get(i);
                 listOfActors.add(actor);
                 f = true;
