@@ -24,6 +24,10 @@ public class Show {
         }
     }
 
+    public void printDirector() {
+        System.out.println(director.toString());
+    }
+
     public void addNewActor(Actor actor) {
         if (!listOfActors.contains(actor)) {
             listOfActors.add(actor);
@@ -36,17 +40,15 @@ public class Show {
     public void changeActor(Actor actor1, String actor2) {
         boolean f = false;
 
-        Actor actor;
-        for (int i = 0; i < Theatre.theatreActors.size(); i++) {
-            if (Theatre.theatreActors.get(i).getSurname().equals(actor2) && listOfActors.contains(actor1)) {
-                listOfActors.remove(actor1);
-                actor = Theatre.theatreActors.get(i);
-                listOfActors.add(actor);
+        for (int i = 0; i < listOfActors.size(); i++) {
+            if (listOfActors.get(i).getSurname().equals(actor2) && !listOfActors.contains(actor1)) {
+                listOfActors.remove(i);
+                listOfActors.add(actor1);
                 f = true;
                 break;
             }
         }
-        listOfActors.remove(actor1);
+
         if (f) {
             System.out.println("Актер успешно заменен!");
         } else {

@@ -10,12 +10,11 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return "Actor{" +
-                "height=" + height +
-                ", name='" + name + '\'' +
+        return "Actor{"
+                + "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", gender=" + gender +
-                '}';
+                ", height=(" + height +
+                ")}";
     }
 
     @Override
@@ -27,7 +26,7 @@ public class Actor extends Person {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, gender,  height);
+        return Objects.hash(name, surname, gender, height);
     }
 
 }
